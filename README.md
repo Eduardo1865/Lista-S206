@@ -4,12 +4,12 @@ Este projeto utiliza o Cypress para realizar testes automatizados. O Cypress é 
 
 Verifica cenários:
 
--Criar um projeto com aluno não cadastrado.
--Criar um projeto só com orientador.
--Criar um projeto com sucesso.
--Criar um projeto que ja existe.
--Criar um projeto e deletar.
--Criar um projeto, deletar intengrantes e salvar projeto.
+- Criar um projeto com aluno não cadastrado.
+- Criar um projeto só com orientador.
+- Criar um projeto com sucesso.
+- Criar um projeto que ja existe.
+- Criar um projeto e deletar.
+- Criar um projeto, deletar intengrantes e salvar projeto.
 
 # Relatório de Testes
 
