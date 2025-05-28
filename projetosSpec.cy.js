@@ -1,5 +1,5 @@
 describe('Testes relacionado aos projetos', () => {
-  it.skip('Criar um projeto com aluno não cadastrado', () => {
+  it('Criar um projeto com aluno não cadastrado', () => {
     cy.visit('https://confianopai.com/login')
     cy.get(':nth-child(2) > .sc-ktwOfi').type('gustavom@')
     cy.get(':nth-child(3) > .sc-ktwOfi').type('123')
@@ -11,7 +11,7 @@ describe('Testes relacionado aos projetos', () => {
     cy.get('.Toastify__toast-body > :nth-child(2)').should("contain.text","Erro ao buscar o nome do membro. Verifique o email e tente novamente.")
   })
 
-  it.skip('Criar um projeto só com orientador', () => {
+  it('Criar um projeto só com orientador', () => {
     cy.visit('https://confianopai.com/login')
     cy.get(':nth-child(2) > .sc-ktwOfi').type('gustavom@')
     cy.get(':nth-child(3) > .sc-ktwOfi').type('123')
@@ -29,7 +29,7 @@ describe('Testes relacionado aos projetos', () => {
     
   })
 
-  it.skip('Criar um projeto com sucesso', () => {
+  it('Criar um projeto com sucesso', () => {
     cy.visit('https://confianopai.com/login')
     cy.get(':nth-child(2) > .sc-ktwOfi').type('gustavom@')
     cy.get(':nth-child(3) > .sc-ktwOfi').type('123')
@@ -51,7 +51,7 @@ describe('Testes relacionado aos projetos', () => {
     cy.get('.Toastify__toast-body > :nth-child(2)').should("contain.text","Equipe criada com sucesso!")
   })
 
-  it.skip('criar um projeto que ja existe', () => {
+  it('criar um projeto que ja existe', () => {
     cy.visit('https://confianopai.com/login')
     cy.get(':nth-child(2) > .sc-ktwOfi').type('gustavom@')
     cy.get(':nth-child(3) > .sc-ktwOfi').type('123')
@@ -76,7 +76,7 @@ describe('Testes relacionado aos projetos', () => {
     
   })
 
-  it.skip('Criar um projeto e deletar', () => {
+  it('Criar um projeto e deletar', () => {
     cy.visit('https://confianopai.com/login')
     cy.get(':nth-child(2) > .sc-ktwOfi').type('gustavom@')
     cy.get(':nth-child(3) > .sc-ktwOfi').type('123')
