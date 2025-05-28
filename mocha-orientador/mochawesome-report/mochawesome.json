@@ -1,0 +1,195 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 6,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-05-28T22:22:10.285Z",
+    "end": "2025-05-28T22:22:35.444Z",
+    "duration": 25159,
+    "testsRegistered": 6,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "8f9e83ba-4c8e-4245-b5cb-91a04adc8eec",
+      "title": "",
+      "fullFile": "cypress\\e2e\\orientadorSpec.cy.js",
+      "file": "cypress\\e2e\\orientadorSpec.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f8e9ae1e-f641-4d5f-93b5-4e70c0498681",
+          "title": "Orientador Spec",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Criar orientador com sucesso",
+              "fullTitle": "Orientador Spec Criar orientador com sucesso",
+              "timedOut": null,
+              "duration": 3783,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://confianopai.com/login');\ncy.get(':nth-child(2) > .sc-ktwOfi').type('gustavom@'); // ID\ncy.get(':nth-child(3) > .sc-ktwOfi').type('123'); // Senha\ncy.get('.sc-csKJxZ').click(); // botão login\ncy.get('[href=\"/adm/novo-usuario\"]').click(); // botão novo usuário\nlet info = login();\ncy.get('.Toastify__toast-body > :nth-child(2)').should('contain', 'Usuário criado com sucesso!'); // mensagem de sucesso",
+              "err": {},
+              "uuid": "4679b0a1-3ffb-4f44-adb3-56f22bce21be",
+              "parentUUID": "f8e9ae1e-f641-4d5f-93b5-4e70c0498681",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Criar orientador com sucesso, fazer logout e logar novamente",
+              "fullTitle": "Orientador Spec Criar orientador com sucesso, fazer logout e logar novamente",
+              "timedOut": null,
+              "duration": 5613,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://confianopai.com/login');\ncy.get(':nth-child(2) > .sc-ktwOfi').type('gustavom@');\ncy.get(':nth-child(3) > .sc-ktwOfi').type('123');\ncy.get('.sc-csKJxZ').click();\ncy.get('[href=\"/adm/novo-usuario\"]').click();\ncy.get('.sc-dsAqUS').select('Orientador');\nlet info = login();\ncy.get('.Toastify__toast-body > :nth-child(2)').should('contain', 'Usuário criado com sucesso!');\ncy.get('.Toastify__close-button > svg').click();\ncy.get('.sc-fHejqy > .sc-irLvIq > .sc-csKJxZ').click(); // logout\ncy.get(':nth-child(2) > .sc-ktwOfi').type(info[0]);\ncy.get(':nth-child(3) > .sc-ktwOfi').type(info[2]);\ncy.get('.sc-csKJxZ').click();",
+              "err": {},
+              "uuid": "771f218c-5978-4014-b770-f88452c3bbac",
+              "parentUUID": "f8e9ae1e-f641-4d5f-93b5-4e70c0498681",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Criar orientador sem email",
+              "fullTitle": "Orientador Spec Criar orientador sem email",
+              "timedOut": null,
+              "duration": 2760,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const {\n  ID,\n  senha\n} = gerarDados();\ncy.visit('https://confianopai.com/login');\ncy.get(':nth-child(2) > .sc-ktwOfi').type('gustavom@');\ncy.get(':nth-child(3) > .sc-ktwOfi').type('123');\ncy.get('.sc-csKJxZ').click();\ncy.get('[href=\"/adm/novo-usuario\"]').click();\ncy.get('.sc-dsAqUS').select('Orientador');\ncy.get(':nth-child(1) > .sc-bqOYya > .sc-gHjVMF').type(ID); // ID\n// Não preenche o email\ncy.get(':nth-child(3) > .sc-bqOYya > .sc-gHjVMF').type(senha); // senha\ncy.get(':nth-child(4) > .sc-irLvIq > .sc-csKJxZ').click();\ncy.get('.Toastify__toast-body > :nth-child(2)').should('not.exist');",
+              "err": {},
+              "uuid": "9f259ae5-858a-4dea-a8c4-2ab68428b8b8",
+              "parentUUID": "f8e9ae1e-f641-4d5f-93b5-4e70c0498681",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Criar orientador sem senha",
+              "fullTitle": "Orientador Spec Criar orientador sem senha",
+              "timedOut": null,
+              "duration": 2597,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const {\n  ID,\n  email\n} = gerarDados();\ncy.visit('https://confianopai.com/login');\ncy.get(':nth-child(2) > .sc-ktwOfi').type('gustavom@');\ncy.get(':nth-child(3) > .sc-ktwOfi').type('123');\ncy.get('.sc-csKJxZ').click();\ncy.get('[href=\"/adm/novo-usuario\"]').click();\ncy.get('.sc-dsAqUS').select('Orientador');\ncy.get(':nth-child(1) > .sc-bqOYya > .sc-gHjVMF').type(ID); // ID\ncy.get(':nth-child(2) > .sc-bqOYya > .sc-gHjVMF').type(email); // email\n// Não preenche a senha\ncy.get(':nth-child(4) > .sc-irLvIq > .sc-csKJxZ').click();\ncy.get('.Toastify__toast-body > :nth-child(2)').should('not.exist');",
+              "err": {},
+              "uuid": "8587eff4-c5f0-446c-8006-e029d3616973",
+              "parentUUID": "f8e9ae1e-f641-4d5f-93b5-4e70c0498681",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Criar orientador sem nome",
+              "fullTitle": "Orientador Spec Criar orientador sem nome",
+              "timedOut": null,
+              "duration": 2885,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const {\n  senha,\n  email\n} = gerarDados();\ncy.visit('https://confianopai.com/login');\ncy.get(':nth-child(2) > .sc-ktwOfi').type('gustavom@');\ncy.get(':nth-child(3) > .sc-ktwOfi').type('123');\ncy.get('.sc-csKJxZ').click();\ncy.get('[href=\"/adm/novo-usuario\"]').click();\ncy.get('.sc-dsAqUS').select('Orientador');\ncy.get(':nth-child(2) > .sc-bqOYya > .sc-gHjVMF').type(email); // email\ncy.get(':nth-child(3) > .sc-bqOYya > .sc-gHjVMF').type(senha); // senha\n// Não preenche o ID\ncy.get(':nth-child(4) > .sc-irLvIq > .sc-csKJxZ').click();\ncy.get('.Toastify__toast-body > :nth-child(2)').should('not.exist');",
+              "err": {},
+              "uuid": "986a16a4-72ff-4302-8750-8d07336cd3fa",
+              "parentUUID": "f8e9ae1e-f641-4d5f-93b5-4e70c0498681",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Não permitir cadastrar orientador com email já existente",
+              "fullTitle": "Orientador Spec Não permitir cadastrar orientador com email já existente",
+              "timedOut": null,
+              "duration": 4702,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const {\n  ID,\n  email,\n  senha\n} = gerarDados();\ncy.visit('https://confianopai.com/login');\ncy.get(':nth-child(2) > .sc-ktwOfi').type('gustavom@');\ncy.get(':nth-child(3) > .sc-ktwOfi').type('123');\ncy.get('.sc-csKJxZ').click();\ncy.get('[href=\"/adm/novo-usuario\"]').click();\n// Primeiro cadastro (válido)\ncy.get('.sc-dsAqUS').select('Orientador');\ncy.get(':nth-child(1) > .sc-bqOYya > .sc-gHjVMF').type(ID);\ncy.get(':nth-child(2) > .sc-bqOYya > .sc-gHjVMF').type(email);\ncy.get(':nth-child(3) > .sc-bqOYya > .sc-gHjVMF').type(senha);\ncy.get(':nth-child(4) > .sc-irLvIq > .sc-csKJxZ').click();\ncy.get('.Toastify__toast-body > :nth-child(2)').should('contain', 'Usuário criado com sucesso!');\ncy.get('.Toastify__close-button > svg').click();\ncy.get('[href=\"/adm/projetos\"]').click(); // Voltar para a página de projetos\n// Tentar cadastrar novamente com o MESMO EMAIL\ncy.get('[href=\"/adm/novo-usuario\"]').click();\ncy.get('.sc-dsAqUS').select('Orientador');\ncy.get(':nth-child(1) > .sc-bqOYya > .sc-gHjVMF').type(ID + '2'); // outro ID\ncy.get(':nth-child(2) > .sc-bqOYya > .sc-gHjVMF').type(email); // mesmo email\ncy.get(':nth-child(3) > .sc-bqOYya > .sc-gHjVMF').type(senha + '2'); // outra senha\ncy.get(':nth-child(4) > .sc-irLvIq > .sc-csKJxZ').click();\n// Validação\ncy.get('.Toastify__toast-body > :nth-child(2)').should('contain', 'Falha ao criar usuário.'); // ajuste conforme a mensagem do sistema",
+              "err": {},
+              "uuid": "e550ac84-6422-49b8-a88e-593ffebba526",
+              "parentUUID": "f8e9ae1e-f641-4d5f-93b5-4e70c0498681",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4679b0a1-3ffb-4f44-adb3-56f22bce21be",
+            "771f218c-5978-4014-b770-f88452c3bbac",
+            "9f259ae5-858a-4dea-a8c4-2ab68428b8b8",
+            "8587eff4-c5f0-446c-8006-e029d3616973",
+            "986a16a4-72ff-4302-8750-8d07336cd3fa",
+            "e550ac84-6422-49b8-a88e-593ffebba526"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 22340,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
