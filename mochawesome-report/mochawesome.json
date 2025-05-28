@@ -1,0 +1,196 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 5,
+    "failures": -5,
+    "start": "2025-05-28T21:44:13.590Z",
+    "end": "2025-05-28T21:44:23.009Z",
+    "duration": 9419,
+    "testsRegistered": 6,
+    "passPercent": 100,
+    "pendingPercent": 83.33333333333334,
+    "other": 5,
+    "hasOther": true,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a6a6e935-ca4a-4884-ba42-4f9c08cc726d",
+      "title": "",
+      "fullFile": "cypress\\e2e\\projetosSpec.cy.js",
+      "file": "cypress\\e2e\\projetosSpec.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f66d6eda-5e78-4058-b79e-8278b10db897",
+          "title": "Testes relacionado aos projetos",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Criar um projeto com aluno não cadastrado",
+              "fullTitle": "Testes relacionado aos projetos Criar um projeto com aluno não cadastrado",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "cy.visit('https://confianopai.com/login');\ncy.get(':nth-child(2) > .sc-ktwOfi').type('gustavom@');\ncy.get(':nth-child(3) > .sc-ktwOfi').type('123');\ncy.get('.sc-csKJxZ').click();\ncy.get('.sc-jdHILj').click();\ncy.get('[href=\"/adm/add-projeto/cadastro\"]').click();\ncy.get(':nth-child(2) > :nth-child(2) > .sc-hsaIUA').type('alunoinexistente');\ncy.get('.sc-dXNkBG').click();\ncy.get('.Toastify__toast-body > :nth-child(2)').should(\"contain.text\", \"Erro ao buscar o nome do membro. Verifique o email e tente novamente.\");",
+              "err": {},
+              "uuid": "a8887eba-17b8-49e0-9fc6-06bc4f0b51cf",
+              "parentUUID": "f66d6eda-5e78-4058-b79e-8278b10db897",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Criar um projeto só com orientador",
+              "fullTitle": "Testes relacionado aos projetos Criar um projeto só com orientador",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "cy.visit('https://confianopai.com/login');\ncy.get(':nth-child(2) > .sc-ktwOfi').type('gustavom@');\ncy.get(':nth-child(3) > .sc-ktwOfi').type('123');\ncy.get('.sc-csKJxZ').click();\ncy.get('[href=\"/adm/novo-usuario\"]').click();\nlet info = cadastroOrientador();\ncy.get('[href=\"/adm/projetos\"]').click();\ncy.get('.sc-jdHILj').click();\ncy.get('[href=\"/adm/add-projeto/cadastro\"]').click();\ncy.get(':nth-child(6) > :nth-child(2) > .sc-hsaIUA').type(info[1]);\ncy.get('.sc-fYrVWQ > .sc-hsaIUA').type('Projeto de teste');\ncy.get('.sc-dXNkBG').click();\ncy.get('.sc-eGgGjL > :nth-child(1)').click();\ncy.get('.Toastify__toast-body > :nth-child(2)').should(\"contain.text\", \"Por favor, adicione pelo menos um integrante.\");",
+              "err": {},
+              "uuid": "0adee1f6-45dd-4b01-8e40-29db18de2810",
+              "parentUUID": "f66d6eda-5e78-4058-b79e-8278b10db897",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Criar um projeto com sucesso",
+              "fullTitle": "Testes relacionado aos projetos Criar um projeto com sucesso",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "cy.visit('https://confianopai.com/login');\ncy.get(':nth-child(2) > .sc-ktwOfi').type('gustavom@');\ncy.get(':nth-child(3) > .sc-ktwOfi').type('123');\ncy.get('.sc-csKJxZ').click();\ncy.get('[href=\"/adm/novo-usuario\"]').click();\nlet info1 = cadastroOrientador();\ncy.visit('https://confianopai.com/login');\ncy.get('[href=\"/adm/novo-usuario\"]').click();\nlet info2 = cadastroAluno();\ncy.get('[href=\"/adm/projetos\"]').click();\ncy.get('.sc-jdHILj').click();\ncy.get('[href=\"/adm/add-projeto/cadastro\"]').click();\ncy.get(':nth-child(2) > :nth-child(2) > .sc-hsaIUA').type(info2[1]);\ncy.get('.sc-fYrVWQ > .sc-hsaIUA').type('Projeto de teste' + info2[0]);\ncy.get(':nth-child(6) > :nth-child(2) > .sc-hsaIUA').type(info1[1]);\ncy.get(':nth-child(1) > .sc-bZTyFN > .sc-hlqirL').select(\"Com pendência\");\ncy.get(':nth-child(2) > .sc-bZTyFN > .sc-hlqirL').select(\"Outro\");\ncy.get('.sc-eGgGjL > :nth-child(1)').click();\ncy.get('.Toastify__toast-body > :nth-child(2)').should(\"contain.text\", \"Equipe criada com sucesso!\");",
+              "err": {},
+              "uuid": "4102c66c-ebee-410a-9a6b-552d24fff947",
+              "parentUUID": "f66d6eda-5e78-4058-b79e-8278b10db897",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "criar um projeto que ja existe",
+              "fullTitle": "Testes relacionado aos projetos criar um projeto que ja existe",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "cy.visit('https://confianopai.com/login');\ncy.get(':nth-child(2) > .sc-ktwOfi').type('gustavom@');\ncy.get(':nth-child(3) > .sc-ktwOfi').type('123');\ncy.get('.sc-csKJxZ').click();\ncy.get('[href=\"/adm/novo-usuario\"]').click();\nlet info1 = cadastroOrientador();\ncy.visit('https://confianopai.com/login');\ncy.get('[href=\"/adm/novo-usuario\"]').click();\nlet info2 = cadastroAluno();\ncy.get('[href=\"/adm/projetos\"]').click();\ncy.get('.sc-jdHILj').click();\ncy.get('[href=\"/adm/add-projeto/cadastro\"]').click();\ncy.get(':nth-child(2) > :nth-child(2) > .sc-hsaIUA').type(info2[1]);\ncy.get('.sc-fYrVWQ > .sc-hsaIUA').type('Projeto de teste' + info2[0]);\ncy.get(':nth-child(6) > :nth-child(2) > .sc-hsaIUA').type(info1[1]);\ncy.get(':nth-child(1) > .sc-bZTyFN > .sc-hlqirL').select(\"Com pendência\");\ncy.get(':nth-child(2) > .sc-bZTyFN > .sc-hlqirL').select(\"Outro\");\ncy.get('.sc-eGgGjL > :nth-child(1)').click();\ncy.get('.Toastify__toast-body > :nth-child(2)').should(\"contain.text\", \"Equipe criada com sucesso!\");\ncy.get('.sc-eGgGjL > :nth-child(1)').click();\ncy.get('.Toastify__toast-body > :nth-child(2)').should(\"not.exist\");",
+              "err": {},
+              "uuid": "cce9d725-a47d-401e-9101-ee52ddaa1180",
+              "parentUUID": "f66d6eda-5e78-4058-b79e-8278b10db897",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Criar um projeto e deletar",
+              "fullTitle": "Testes relacionado aos projetos Criar um projeto e deletar",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "cy.visit('https://confianopai.com/login');\ncy.get(':nth-child(2) > .sc-ktwOfi').type('gustavom@');\ncy.get(':nth-child(3) > .sc-ktwOfi').type('123');\ncy.get('.sc-csKJxZ').click();\ncy.get('[href=\"/adm/novo-usuario\"]').click();\nlet info1 = cadastroOrientador();\ncy.visit('https://confianopai.com/login');\ncy.get('[href=\"/adm/novo-usuario\"]').click();\nlet info2 = cadastroAluno();\ncy.get('[href=\"/adm/projetos\"]').click();\ncy.get('.sc-jdHILj').click();\ncy.get('[href=\"/adm/add-projeto/cadastro\"]').click();\ncy.get(':nth-child(2) > :nth-child(2) > .sc-hsaIUA').type(info2[1]);\ncy.get('.sc-fYrVWQ > .sc-hsaIUA').type('Projeto de teste' + info2[0]);\ncy.get(':nth-child(6) > :nth-child(2) > .sc-hsaIUA').type(info1[1]);\ncy.get(':nth-child(1) > .sc-bZTyFN > .sc-hlqirL').select(\"Com pendência\");\ncy.get(':nth-child(2) > .sc-bZTyFN > .sc-hlqirL').select(\"Outro\");\ncy.get('.sc-eGgGjL > :nth-child(1)').click();\ncy.get('.Toastify__toast-body > :nth-child(2)').should(\"contain.text\", \"Equipe criada com sucesso!\");\ncy.get('[href=\"/adm/projetos\"]').click();\ncy.get('.sc-ckdEwu').type('Projeto de teste' + info2[0]);\ncy.get('.sc-gjLLEI').click();\ncy.get('.sc-iCKXBC > [viewBox=\"0 0 448 512\"] > path').click();\ncy.get('.sc-cZpZpK > :nth-child(1)').click();\ncy.get('.sc-ckdEwu').type('Projeto de teste' + info2[0]);\ncy.get('.sc-gjLLEI').should(\"not.exist\");",
+              "err": {},
+              "uuid": "36d9cec3-000c-4310-8480-8ba074cfb7ea",
+              "parentUUID": "f66d6eda-5e78-4058-b79e-8278b10db897",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Criar um projeto, deletar intengrantes e salvar projeto",
+              "fullTitle": "Testes relacionado aos projetos Criar um projeto, deletar intengrantes e salvar projeto",
+              "timedOut": null,
+              "duration": 8267,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://confianopai.com/login');\ncy.get(':nth-child(2) > .sc-ktwOfi').type('gustavom@');\ncy.get(':nth-child(3) > .sc-ktwOfi').type('123');\ncy.get('.sc-csKJxZ').click();\ncy.get('[href=\"/adm/novo-usuario\"]').click();\nlet info1 = cadastroOrientador();\ncy.visit('https://confianopai.com/login');\ncy.get('[href=\"/adm/novo-usuario\"]').click();\nlet info2 = cadastroAluno();\ncy.get('[href=\"/adm/projetos\"]').click();\ncy.get('.sc-jdHILj').click();\ncy.get('[href=\"/adm/add-projeto/cadastro\"]').click();\ncy.get(':nth-child(2) > :nth-child(2) > .sc-hsaIUA').type(info2[1]);\ncy.get('.sc-fYrVWQ > .sc-hsaIUA').type('Projeto de teste' + info2[0]);\ncy.get(':nth-child(6) > :nth-child(2) > .sc-hsaIUA').type(info1[1]);\ncy.get(':nth-child(1) > .sc-bZTyFN > .sc-hlqirL').select(\"Com pendência\");\ncy.get(':nth-child(2) > .sc-bZTyFN > .sc-hlqirL').select(\"Outro\");\ncy.get('.sc-eGgGjL > :nth-child(1)').click();\ncy.get('.Toastify__toast-body > :nth-child(2)').should(\"contain.text\", \"Equipe criada com sucesso!\");\ncy.get('[href=\"/adm/projetos\"]').click();\ncy.get('.sc-ckdEwu').type('Projeto de teste' + info2[0]);\ncy.get('.sc-gjLLEI').click();\ncy.get(':nth-child(2) > .sc-jiaSqj > .sc-hVcFVo > path').click();\ncy.get('.sc-bbxCgr > :nth-child(1)').click();\ncy.get('.iTLMzn > .sc-csKJxZ').click();\ncy.get('.Toastify__toast-body > :nth-child(2)').should(\"contain.text\", \"Erro ao atualizar o projeto. Por favor, tente novamente.\");",
+              "err": {},
+              "uuid": "eb1a99c0-2b39-403f-b1b9-c660e4c9c5f8",
+              "parentUUID": "f66d6eda-5e78-4058-b79e-8278b10db897",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "eb1a99c0-2b39-403f-b1b9-c660e4c9c5f8"
+          ],
+          "failures": [],
+          "pending": [
+            "a8887eba-17b8-49e0-9fc6-06bc4f0b51cf",
+            "0adee1f6-45dd-4b01-8e40-29db18de2810",
+            "4102c66c-ebee-410a-9a6b-552d24fff947",
+            "cce9d725-a47d-401e-9101-ee52ddaa1180",
+            "36d9cec3-000c-4310-8480-8ba074cfb7ea"
+          ],
+          "skipped": [],
+          "duration": 8267,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
