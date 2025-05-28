@@ -11,6 +11,17 @@ Verifica cenários:
 - Criar um projeto e deletar.
 - Criar um projeto, deletar intengrantes e salvar projeto.
 
+# Sobre o orientador
+
+Verifica cenários:
+
+- Criar orientador com sucesso.
+- Criar orientador com sucesso, fazer logout e logar novamente.
+- Criar orientador sem email.
+- Criar orientador sem senha.
+- Criar orientador sem nome.
+- Não permitir cadastrar orientador com email já existente.
+
 # Relatório de Testes
 
 Para gerar o relatório dos testes automatizados, utilizamos o framework Cypress integrado com o reporter mochawesome.
