@@ -22,6 +22,18 @@ Verifica cenários:
 - Criar orientador sem nome.
 - Não permitir cadastrar orientador com email já existente.
 
+# Sobre o Aluno
+
+Verifica cenários:
+
+- Criar aluno com sucesso.
+- Criar aluno com sucesso, faz logout e loga como aluno.
+- Tenta criar aluno sem usuario.
+- Tenta criar aluno sem senha.
+- Tenta criar aluno sem email.
+- Tenta criar aluno sem passar nada.
+
+
 # Relatório de Testes
 
 Para gerar o relatório dos testes automatizados, utilizamos o framework Cypress integrado com o reporter mochawesome.
